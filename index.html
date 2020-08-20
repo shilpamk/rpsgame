@@ -23,6 +23,8 @@
                         result = "Player Won!, Paper beats Rock";
                     } else if(playerSelection == "scissors") {
                         result = "Computer Won!, Rock beats Scissors";
+                    } else {
+                        result = "Game draw, as both chose the same option";
                     }
                     break;
                case "paper":
@@ -30,6 +32,8 @@
                         result = "Computer Won!, Paper beats Rock";
                     } else if(playerSelection == "scissors") {
                         result = "Player Won!, Scissors beats Paper";
+                    } else {
+                        result = "Game draw, as both chose the same option";
                     }
                     break;
                case "scissors":
@@ -37,10 +41,9 @@
                         result = "Player Won!, Rock beats Scissors";
                     } else if(playerSelection == "paper") {
                         result = "Computer Won!, Scissors beats Paper";
+                    } else {
+                        result = "Game draw, as both chose the same option";
                     }
-                    break;
-                default: 
-                    result = "Game draw, as both chose the same option";
                     break;
            }
            return result;

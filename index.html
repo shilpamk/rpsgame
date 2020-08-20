@@ -9,7 +9,8 @@
     <script>
 
         options = ["rock", "paper", "scissors"];
-
+        var computerScore = 0;
+        var playerScore = 0;
         function computerPlay() {
             var choice =  Math.floor(Math.random() * Math.floor(3));
             return options[choice];
@@ -21,8 +22,10 @@
                case "rock":
                     if(playerSelection == "paper") {
                         result = "Player Won!, Paper beats Rock";
+                        playerScore++;
                     } else if(playerSelection == "scissors") {
                         result = "Computer Won!, Rock beats Scissors";
+                        computerScore++;
                     } else {
                         result = "Game draw, as both chose the same option";
                     }
@@ -30,8 +33,10 @@
                case "paper":
                     if(playerSelection == "rock") {
                         result = "Computer Won!, Paper beats Rock";
+                        computerScore++;
                     } else if(playerSelection == "scissors") {
                         result = "Player Won!, Scissors beats Paper";
+                        playerScore++;
                     } else {
                         result = "Game draw, as both chose the same option";
                     }
@@ -39,8 +44,10 @@
                case "scissors":
                     if(playerSelection == "rock") {
                         result = "Player Won!, Rock beats Scissors";
+                        playerScore++;
                     } else if(playerSelection == "paper") {
                         result = "Computer Won!, Scissors beats Paper";
+                        computerScore++;
                     } else {
                         result = "Game draw, as both chose the same option";
                     }
@@ -49,11 +56,29 @@
            return result;
         }
 
-        var computerSelection = computerPlay();
-        var playerSelection = "scissors";
-
-        var gameResult = playRound(computerSelection.toLowerCase(), playerSelection.toLowerCase());
-        console.log(gameResult);
+        function game() {
+            var computerSelection;
+            var playerSelection;
+            var gameResult;
+            var gameRounds = 5;
+            for (let index = 0; index < gameRounds; index++) {
+                computerSelection = computerPlay();
+                playerSelection = prompt("Select one: rock, paper, scissors");
+                gameResult = playRound(computerSelection.toLowerCase(), playerSelection.toLowerCase());
+                console.log(gameResult);
+            }
+            console.log("Computer score: "+ computerScore );
+            console.log("Player score: "+ playerScore );
+            if(computerScore > playerScore) {
+                console.log("Winner: Computer");
+            } else if(playerScore > computerScore) {
+                console.log("Winner: Player");
+            } else {
+                console.log("Game draw");
+            }
+        }
+        game();
+        
     </script>
 </body>
 </html>

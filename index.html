@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissors</title>
+</head>
+<body>
+    <script>
+
+        options = ["rock", "paper", "scissors"];
+
+        function computerPlay() {
+            var choice =  Math.floor(Math.random() * Math.floor(3));
+            return options[choice];
+        }
+
+        function playRound(computerSelection, playerSelection) {
+            var result = "";
+            switch(computerSelection) {
+               case "rock":
+                    if(playerSelection == "paper") {
+                        result = "Player Won!, Paper beats Rock";
+                    } else if(playerSelection == "scissors") {
+                        result = "Computer Won!, Rock beats Scissors";
+                    }
+                    break;
+               case "paper":
+                    if(playerSelection == "rock") {
+                        result = "Computer Won!, Paper beats Rock";
+                    } else if(playerSelection == "scissors") {
+                        result = "Player Won!, Scissors beats Paper";
+                    }
+                    break;
+               case "scissors":
+                    if(playerSelection == "rock") {
+                        result = "Player Won!, Rock beats Scissors";
+                    } else if(playerSelection == "paper") {
+                        result = "Computer Won!, Scissors beats Paper";
+                    }
+                    break;
+                default: 
+                    result = "Game draw, as both chose the same option";
+                    break;
+           }
+           return result;
+        }
+
+        var computerSelection = computerPlay();
+        var playerSelection = "scissors";
+
+        var gameResult = playRound(computerSelection.toLowerCase(), playerSelection.toLowerCase());
+        console.log(gameResult);
+    </script>
+</body>
+</html>

@@ -4,81 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RockPaperScissors</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <script>
-
-        options = ["rock", "paper", "scissors"];
-        var computerScore = 0;
-        var playerScore = 0;
-        function computerPlay() {
-            var choice =  Math.floor(Math.random() * Math.floor(3));
-            return options[choice];
-        }
-
-        function playRound(computerSelection, playerSelection) {
-            var result = "";
-            switch(computerSelection) {
-               case "rock":
-                    if(playerSelection == "paper") {
-                        result = "Player Won!, Paper beats Rock";
-                        playerScore++;
-                    } else if(playerSelection == "scissors") {
-                        result = "Computer Won!, Rock beats Scissors";
-                        computerScore++;
-                    } else {
-                        result = "Game draw, as both chose the same option";
-                    }
-                    break;
-               case "paper":
-                    if(playerSelection == "rock") {
-                        result = "Computer Won!, Paper beats Rock";
-                        computerScore++;
-                    } else if(playerSelection == "scissors") {
-                        result = "Player Won!, Scissors beats Paper";
-                        playerScore++;
-                    } else {
-                        result = "Game draw, as both chose the same option";
-                    }
-                    break;
-               case "scissors":
-                    if(playerSelection == "rock") {
-                        result = "Player Won!, Rock beats Scissors";
-                        playerScore++;
-                    } else if(playerSelection == "paper") {
-                        result = "Computer Won!, Scissors beats Paper";
-                        computerScore++;
-                    } else {
-                        result = "Game draw, as both chose the same option";
-                    }
-                    break;
-           }
-           return result;
-        }
-
-        function game() {
-            var computerSelection;
-            var playerSelection;
-            var gameResult;
-            var gameRounds = 5;
-            for (let index = 0; index < gameRounds; index++) {
-                computerSelection = computerPlay();
-                playerSelection = prompt("Select one: rock, paper, scissors");
-                gameResult = playRound(computerSelection.toLowerCase(), playerSelection.toLowerCase());
-                console.log(gameResult);
-            }
-            console.log("Computer score: "+ computerScore );
-            console.log("Player score: "+ playerScore );
-            if(computerScore > playerScore) {
-                console.log("Winner: Computer");
-            } else if(playerScore > computerScore) {
-                console.log("Winner: Player");
-            } else {
-                console.log("Game draw");
-            }
-        }
-        game();
+    <h1>Rock Paper Scissors Game</h1>
         
-    </script>
+    <div id="buttons">
+        <button class="button" id="rock">ROCK</button>
+        <button class="button" id="paper">PAPER</button>
+        <button class="button" id="scissors">SCISSORS</button>
+        
+    </div>  
+
+    <div id="game" >
+        <div>
+            <h2>Score board</h2>
+        </div>
+
+        <div id="players">
+            <div id="cs">Computer</div>
+            <div id="pl">Player</div> 
+            
+        </div>
+        <div id="choices">
+            <div id="compChoice">Choice</div>
+            <div id="plrChoice">Choice</div>
+        </div>
+        <div id="result">Result</div>
+        <div id="scores">
+            <p id="computer">0</p>
+            <p id="player">0</p>
+        </div>
+    </div>
+   
+    <script src="dom.js"></script>
+  
+    
 </body>
 </html>

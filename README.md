@@ -1,4 +1,4 @@
-# Project: Rock Paper Scissors
+# Project: Rock Paper Scissors [ClickHere](https://shilpamk.github.io/rpsgame/)
 
 ## Game rules
 * Rock beats Scissors

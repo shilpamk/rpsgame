@@ -13,10 +13,10 @@ function playRound(computerSelection, playerSelection) {
     switch(computerSelection) {
         case "rock":
             if(playerSelection == "paper") {
-                result = "Player Won! Paper beats Rock";
+                result = "Paper beats Rock";
                 playerScore++;
             } else if(playerSelection == "scissors") {
-                result = "Computer Won! Rock beats Scissors";
+                result = "Rock beats Scissors";
                 computerScore++;
             } else {
                 result = "Game draw! Both chose the same option";
@@ -24,10 +24,10 @@ function playRound(computerSelection, playerSelection) {
             break;
         case "paper":
             if(playerSelection == "rock") {
-                result = "Computer Won! Paper beats Rock";
+                result = "Paper beats Rock";
                 computerScore++;
             } else if(playerSelection == "scissors") {
-                result = "Player Won! Scissors beats Paper";
+                result = "Scissors beats Paper";
                 playerScore++;
             } else {
                 result = "Game draw!  Both chose the same option";
@@ -35,10 +35,10 @@ function playRound(computerSelection, playerSelection) {
             break;
         case "scissors":
             if(playerSelection == "rock") {
-                result = "Player Won! Rock beats Scissors";
+                result = "Rock beats Scissors";
                 playerScore++;
             } else if(playerSelection == "paper") {
-                result = "Computer Won! Scissors beats Paper";
+                result = "Scissors beats Paper";
                 computerScore++;
             } else {
                 result = "Game draw! Both chose the same option";
@@ -70,7 +70,8 @@ function runSelection(e) {
     game();
 }
 
-var gameCount = 0;
+var gameWinningPoints = 3;
+let foundWinner = false;
 function game() {
     var computerSelection;
     var gameResult;
@@ -81,19 +82,26 @@ function game() {
     gameResult = playRound(computerSelection.toLowerCase(), playerSelection.toLowerCase());
     console.log(gameResult);
     res.innerHTML = gameResult;
-    
-    
-   // console.log("Computer score: "+ computerScore );
-    
-    //console.log("Player score: "+ playerScore );
+        
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
-    if(computerScore > playerScore) {
-        console.log("Winner: Computer");
-    } else if(playerScore > computerScore) {
-        console.log("Winner: Player");
-    } else {
-        console.log("Game draw");
+    
+    if(computerScore == gameWinningPoints) {
+        res.innerHTML = "Computer Won!!";
+        res.style.color = "darkblue" ; 
+        foundWinner = true;
+    } else if(playerScore == gameWinningPoints) {
+        res.innerHTML = "Player Won!!";
+        res.style.color = "darkblue";  
+        foundWinner = true;      
+    } 
+    if(foundWinner) {
+        foundWinner = false;
+        computerScore = 0;
+        playerScore = 0;
     }
+
+    
+    res.style.backgroundColor = "yellowgreen";
 }
 

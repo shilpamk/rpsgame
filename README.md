@@ -6,6 +6,9 @@
 * Paper beats Rock
 
 ## Usage and learning: 
+* DOM
 
-* Functions
-* prompt() to take user inputs
+## To do:
+* Add comments
+* Improve styling
+

@@ -1,0 +1,38 @@
+body {
+    
+    background:wheat;
+}
+h1 {
+    text-align: center;
+    color: rgb(45, 68, 172); 
+    margin-bottom: 30px;  
+    font-size: larger;
+}
+
+#buttons {
+    display: flex; 
+    justify-content: center;  
+}
+.button {
+    width: 100px;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 10px;
+    background: turquoise;
+    font-weight: 700;
+}
+.button:hover {
+    background: yellowgreen;
+}
+
+#game {
+    text-align: center;    
+}
+
+#players, #scores, #choices,#result {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding: 10px;
+}
+

@@ -24,6 +24,7 @@ h1 {
     margin: 40px;
     background: turquoise;
     font-weight: 700;
+    transition: all .2s ease-in;
 }
 .button:hover {
     background: yellow;
@@ -36,8 +37,9 @@ h1 {
     padding: 10px;
     width: 100px;
     font-weight: 700;
-    background: lightpink;
+    background: turquoise;
     border-radius: 10px;
+    transition: all .2s ease-in;
 }
 #reset:hover {
     transform: scale(1.2);

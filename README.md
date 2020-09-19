@@ -7,9 +7,10 @@
 
 ## Usage and learning: 
 * DOM
+* CSS Transition
 * CSS Transform
 
 ## To do:
 * Add comments
 * Improve styling
-* Try with CSS Transition on buttons
+

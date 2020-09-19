@@ -1,5 +1,5 @@
+
 body {
-    
     background:wheat;
 }
 h1 {
@@ -8,21 +8,35 @@ h1 {
     margin-bottom: 30px;  
     font-size: larger;
 }
-
 #buttons {
     display: flex; 
-    justify-content: center;  
+    justify-content:center; 
+    background: brown;
 }
 .button {
-    width: 100px;
+    width: 80px;
+    height: 80px;
     padding: 10px;
     border-radius: 50%;
-    margin: 10px;
+    margin: 40px;
     background: turquoise;
     font-weight: 700;
 }
 .button:hover {
-    background: yellowgreen;
+    background: yellow;
+    transform: scaleX(1.5);
+}
+#reset {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100px;
+    font-weight: 700;
+    background: lightpink;
+}
+#reset:hover {
+    transform: scale(1.2);
+    background: yellow;
 }
 
 #game {

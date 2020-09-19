@@ -2,6 +2,27 @@
 options = ["rock", "paper", "scissors"];
 var computerScore = 0;
 var playerScore = 0;
+var gameCount = 0;
+
+let btnRock = document.getElementById("rock");
+let btnPaper = document.getElementById("paper"); 
+let btnScissors = document.getElementById("scissors");
+let btnReset = document.getElementById("reset");
+btnReset.addEventListener("click", reset);
+
+btnRock.addEventListener("click", runSelection);
+btnPaper.addEventListener("click", runSelection);
+btnScissors.addEventListener("click", runSelection);
+
+let pScore = document.getElementById('player');
+let cScore = document.getElementById('computer');
+
+
+let pChoice = document.getElementById('plrChoice');
+let cChoice = document.getElementById('compChoice');
+
+let res = document.getElementById('result');
+var playerSelection;
 
 function computerPlay() {
     var choice =  Math.floor(Math.random() * Math.floor(3));
@@ -47,53 +68,31 @@ function playRound(computerSelection, playerSelection) {
     }
     return result;
 }
-
-let btnRock = document.getElementById("rock");
-let btnPaper = document.getElementById("paper"); 
-let btnScissors = document.getElementById("scissors");
-
-btnRock.addEventListener("click", runSelection);
-btnPaper.addEventListener("click", runSelection);
-btnScissors.addEventListener("click", runSelection);
-
-let pScore = document.getElementById('player');
-let cScore = document.getElementById('computer');
-
-
-let pChoice = document.getElementById('plrChoice');
-let cChoice = document.getElementById('compChoice');
-let res = document.getElementById('result');
-var playerSelection;
-
 function runSelection(e) {
     playerSelection = e.target.id;
     game();
 }
 
-var gameCount = 0;
-function game() {
-    var computerSelection;
-    var gameResult;
-                
-    computerSelection = computerPlay(); 
-    pChoice.innerHTML =   playerSelection;
-    cChoice.innerHTML =  computerSelection;
-    gameResult = playRound(computerSelection.toLowerCase(), playerSelection.toLowerCase());
-    console.log(gameResult);
-    res.innerHTML = gameResult;
-    
-    
-   // console.log("Computer score: "+ computerScore );
-    
-    //console.log("Player score: "+ playerScore );
+function reset() {
+    gameCount = 0;
+    computerScore = 0;
+    playerScore = 0;
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
-    if(computerScore > playerScore) {
-        console.log("Winner: Computer");
-    } else if(playerScore > computerScore) {
-        console.log("Winner: Player");
-    } else {
-        console.log("Game draw");
-    }
+    res.innerHTML = "Result";
 }
+function game() {      
+    let computerSelection = computerPlay(); 
+    pChoice.innerHTML =   playerSelection;
+    cChoice.innerHTML =  computerSelection;
+    res.innerHTML = playRound(computerSelection.toLowerCase(), playerSelection.toLowerCase());
+    pScore.textContent = playerScore;
+    cScore.textContent = computerScore;
+}
+
+
+
+
+
+
 

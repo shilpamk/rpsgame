@@ -1,6 +1,8 @@
 
 body {
     background:wheat;
+    position: relative;
+    
 }
 h1 {
     text-align: center;
@@ -9,6 +11,7 @@ h1 {
     font-size: larger;
 }
 #buttons {
+    
     display: flex; 
     justify-content:center; 
     background: brown;
@@ -27,12 +30,14 @@ h1 {
     transform: scaleX(1.5);
 }
 #reset {
-    margin-left: 50px;
-    margin-bottom: 20px;
+    position: absolute;
+    top: 0px;
+    left: 10px;
     padding: 10px;
     width: 100px;
     font-weight: 700;
     background: lightpink;
+    border-radius: 10px;
 }
 #reset:hover {
     transform: scale(1.2);

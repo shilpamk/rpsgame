@@ -1,15 +1,15 @@
 
 options = ["rock", "paper", "scissors"];
-var computerScore = 0;
-var playerScore = 0;
+let computerScore = 0;
+let playerScore = 0;
 
 function computerPlay() {
-    var choice =  Math.floor(Math.random() * 3);
+    let choice =  Math.floor(Math.random() * 3);
     return options[choice];
 }
 
 function playRound(computerSelection, playerSelection) {
-    var result = "";
+    let result = "";
     switch(computerSelection) {
         case "rock":
             if(playerSelection == "paper") {
@@ -63,18 +63,18 @@ let cScore = document.getElementById('computer');
 let pChoice = document.getElementById('plrChoice');
 let cChoice = document.getElementById('compChoice');
 let res = document.getElementById('result');
-var playerSelection;
+let playerSelection;
 
 function runSelection(e) {
     playerSelection = e.target.id;
     game();
 }
 
-var gameWinningPoints = 3;
+let gameWinningPoints = 3;
 let foundWinner = false;
 function game() {
-    var computerSelection;
-    var gameResult;
+    let computerSelection;
+    let gameResult;
                 
     computerSelection = computerPlay(); 
     pChoice.innerHTML =   playerSelection;

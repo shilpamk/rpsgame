@@ -4,8 +4,7 @@ var computerScore = 0;
 var playerScore = 0;
 
 function computerPlay() {
-    // Generate number from 1 to 3
-    var choice =  Math.floor(Math.random() * 3) + 1;
+    var choice =  Math.floor(Math.random() * 3);
     return options[choice];
 }
 

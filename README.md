@@ -7,6 +7,8 @@
 
 ## Usage and learning: 
 * DOM
+* CSS Transition
+* CSS Transform
 
 ## To do:
 * Add comments
